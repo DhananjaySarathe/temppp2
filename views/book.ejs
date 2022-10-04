@@ -1,0 +1,89 @@
+<%- include("header") -%>
+<%- include("nav") -%>
+
+<div class="blank">
+
+</div>
+
+
+
+<div class="container-fluid">
+    <h1 class="bookh1"> Saloons near:  <%= data %> </h1>
+    
+</div>
+    <div class="container  blank2">
+    
+<div class="container-fluid">
+    <div class="box1">
+    <h1 class="h1book"> <span>Note</span> : You have to pay extra charge of advance Booking (₹5) at the shop </h1>
+</div>
+</div>
+
+    </div>
+    <!-- <p> <%= shop %> </p> -->
+    
+    <div class="temp">
+
+
+    <%if(shop.length===0 ){%>
+        <h2>No shops here currently.Kindly share location with us in feedback</h2>
+    <%}else{%>
+
+
+    <ul class="ulbook" >
+        <% shop.forEach(e=>{%>
+            <li>
+                <div class="row">
+                    <div class="col-4">
+                        <h2>Name :</h2> 
+                    </div>
+                    <div class="col-8">
+                       <h2><%=e.name%></h2> 
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <h2>Visiting Hours :</h2> 
+                    </div>
+                    <div class="col-8">
+                       <h2><%=e.visitingHours%></h2> 
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <h2>Location :</h2> 
+                    </div>
+                    <div class="col-8">
+                       <h2><a target="_blank" href=<%=e.location%>> Get Exact Location </a> </h2> 
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <h2>Services :</h2> 
+                    </div>
+                    <div class="col-8">
+                       <h2>(i) Haircut: ₹<%=e.services.Haircut%></a> </h2> 
+                       <h2>(ii) Shave: ₹<%=e.services.Shave%></a> </h2> 
+                       <h2>(iii) Haircut and Shave: ₹<%=e.services.HnS%></a> </h2> 
+                    </div>
+                </div>
+            </li>
+            <div class="btnalign">
+                <form action="/book" method="post">
+                <button type="submit" class="btn btn-secondary btn-sm bookbtn" name="naam" value="<%=e.name%>" >Book</button>
+            </form>
+            </div>
+            <%})%>
+    </ul>
+</div>
+
+<%}%>
+
+
+</div>
+
+
+<%- include("footer") -%>

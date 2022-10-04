@@ -1,0 +1,61 @@
+<%- include("header") -%>
+<%- include("nav") -%>
+
+<div class="blank">
+
+</div>
+
+<div class="container-fluid">
+    <h1 class="bookh1">  <%= book.name %> </h1>
+</div>
+
+<form action="/finalbook" method="post">
+    
+    <div class="container  tempp2">
+        
+        <label class="datafinal">Name:</label>
+            <input type="text" name="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <label class="datafinal">Contact Number:</label>
+            <input type="text" name="contact" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                
+            <label class="datafinal" >Service</label>
+                <select id="service" name="services ">
+                  <option value="Haircut">Haircut</option>
+                  <option value="Shave">Shave</option>
+                  <option value="Haircut and Shave">Both</option>
+                </select>
+ <br>
+                <label class="datafinal">Date</label>
+                <input type="date" name="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <!-- <input type="submit" value="Submit"> -->
+            <label class="datafinal">Time</label>
+            <input type="time" name="time" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+<br> <br>        
+        <div class="btnalign">
+            <button type="submit" class="btn btn-secondary btn-lg">Submit</button>
+        </div>
+
+    </div>
+
+</form>
+
+
+
+
+    <div class="container-fluid">
+        <div class="box1">
+        <h1 class="h1book"> <span>Note</span> : You have to pay extra charge of advance Booking (₹5) at the shop </h1>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include("footer") -%>
