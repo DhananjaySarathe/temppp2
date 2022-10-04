@@ -19,11 +19,10 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static("public"));
 
 mongoose.connect("mongodb+srv://DhananjaySarathe:pass123@cluster0.fc6puri.mongodb.net/bycMain",{useNewUrlParser: true});
-<<<<<<< HEAD
+
 // mongoose.connect('mongodb://localhost:27017/byc',{useNewUrlParser: true});
-=======
 //mongoose.connect('mongodb://localhost:27017/myapptry1234',{useNewUrlParser: true});
->>>>>>> ecaffa475e310e6f296c47910277328475fa1c99
+
 
 const entrySchema={
     name:String,
